@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -18,25 +18,39 @@
         <form class="row g-3 w-75 border border-0 bg-light mt-5 mb-3 rounded">
             <!--The Email row.-->
             <div class="mt-3 mb-3 row">
-                <label for="Email" class="col-sm-2 col-form-label">Email:</label>
+                <label for="Username" class="col-sm-2 col-form-label">Username:</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="Email">
+                    <input type="text" class="form-control" id="Username">
                 </div>
             </div>
             <!--The Password row.-->
             <div class="mt-3 mb-3 row">
                 <label for="InputPassword" class="col-sm-2 col-form-label">Password:</label>
                 <div class="col-sm-10">
-                    <input type="password" class="form-control" id="InputPassword">
+                    <input type="password" class="form-control" id="Password">
+                    <span id="passwordHelpInline" class="form-text">
+                        Must be 8-20 characters long, and contain at least 1 number and 1 letter.
+                      </span>
+                </div>
+            </div>
+            <!--The Password verification row.-->
+            <div class="mt-3 mb-3 row">
+                <label for="InputPassword" class="col-sm-2 col-form-label">Password again:</label>
+                <div class="col-sm-10">
+                    <input type="password" class="form-control" id="VerifyPassword">
                 </div>
             </div>
             <!--The display name row.-->
             <div class="mt-4 mb-4 row">
                 <label for="Displayname" class="col-sm-2 col-form-label">Display name:</label>
                 <div class="col-sm-10">
-                    <input type="password" class="form-control" id="Displayname">
+                    <input type="text" class="form-control" id="Displayname">
                 </div>
             </div>
+            <div class="mt-4 mb-4 row">
+                <input type="file" class="form-control col-sm-2 col-form-label" id = "Photo" aria-label="file example" required>
+                <div class="invalid-feedback col-sm-10">Example invalid form file feedback</div>
+              </div>
             <!--The Logining and Registering row.-->
             <div class="row pt-2">
                 <div class="col">
@@ -54,7 +68,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
-    <script src="Sign.js"></script>    
+    <script src="Signing.html"></script>    
 </body>
 
 </html>
