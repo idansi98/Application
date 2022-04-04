@@ -1,8 +1,11 @@
+//Initiallize a users array.
 users = [];
 var check = document.getElementById("Register");
+//The logic when the Register button was entered.
 check.onclick = function() {
     var password = document.getElementById("Password").value;
     if(isPasswordValid(password) && isPasswordValidLength(password)) {
+    //Push a new user to the array.    
     let user = {
         "Username" : document.getElementById("Username").value,
         "Password" : password,
@@ -21,7 +24,7 @@ check.onclick = function() {
             console.log(p[i].Username);
         }
     }
-
+    //Function to check whether a password's length is valid or not.
     function isPasswordValidLength(password) {
         if(password.length < 8) {
             console.log("Minimum length of password is 8 characters, please try again!");
@@ -33,6 +36,7 @@ check.onclick = function() {
         }
     }
 
+    //Function to check whether a password is valid or not.
     function isPasswordValid(password) {
         var numChecker = false;
         var letterChecker = false;
