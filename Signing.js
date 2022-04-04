@@ -4,22 +4,32 @@ var check = document.getElementById("Register");
 //The logic when the Register button was entered.
 check.onclick = function() {
     var password = document.getElementById("Password").value;
-    var photo = document.getElementById("Photo").value.toString();
-    if(isPasswordValid(password) && isPasswordValidLength(password) && isFileImage(photo)) {
+    var photo = document.getElementById("Photo").value;
+    var passwordVerificator = document.getElementById("Verifypassword").value;
+    if(isPasswordValid(password) && isPasswordValidLength(password) &&
+    isFileImage(photo) && isSamePassword(password, passwordVerificator)) {
     //Push a new user to the array.
     let user = {
         "Username" : document.getElementById("Username").value,
         "Password" : password,
-        "Verifypassword" : document.getElementById("Verifypassword").value,
+        "Verifypassword" : passwordVerificator,
         "Displayname" : document.getElementById("Displayname").value,
         "Photo" : photo
         }
         users.push(user);
-        printArray(users);
+        alert("You have just been registered successfully!");
+        window.location.assign("Login.html");
     }
 }
 
+    function isSamePassword(password1, password2) {
+        if(!(password1 == password2)) {
+            alert("You entered different passwords! please try again.");
+            return false;
+        }
+        return true;
 
+    }
     function printArray(p) {
         for(let i = 0; i < p.length; i++) {
             console.log(p[i].Username);
