@@ -4,14 +4,15 @@ var check = document.getElementById("Register");
 //The logic when the Register button was entered.
 check.onclick = function() {
     var password = document.getElementById("Password").value;
-    if(isPasswordValid(password) && isPasswordValidLength(password)) {
-    //Push a new user to the array.    
+    var photo = document.getElementById("Photo").value.toString();
+    if(isPasswordValid(password) && isPasswordValidLength(password) && isFileImage(photo)) {
+    //Push a new user to the array.
     let user = {
         "Username" : document.getElementById("Username").value,
         "Password" : password,
         "Verifypassword" : document.getElementById("Verifypassword").value,
         "Displayname" : document.getElementById("Displayname").value,
-        "Photo" : document.getElementById("Photo").value
+        "Photo" : photo
         }
         users.push(user);
         printArray(users);
@@ -27,13 +28,14 @@ check.onclick = function() {
     //Function to check whether a password's length is valid or not.
     function isPasswordValidLength(password) {
         if(password.length < 8) {
-            console.log("Minimum length of password is 8 characters, please try again!");
-            return false;        
+            alert("Your password must be at least 8 characters! please try again.");
+            return false;     
         }
         if(password.length > 20) {
-            console.log("Maximum length of password is 20 characters, please try again!");
-            return false; 
+            alert("Your password must be maximum 20 characters! please try again.");
+            return false;  
         }
+        return true;
     }
 
     //Function to check whether a password is valid or not.
@@ -51,6 +53,17 @@ check.onclick = function() {
         if(numChecker && letterChecker) {
             return true;
         }
+        alert("Your password must contain at least 1 number and 1 letter! please try again.")
         return false;    
     }
     
+    //Function to check whether a file is an image or not.
+    function isFileImage(file) {
+        let index = file.lastIndexOf(".") + 1;
+        let fileType = file.substring(index, file.length).toUpperCase();
+        if(fileType == "JPEG" || fileType == "JPG" || fileType == "PNG") {
+            return true;
+        }
+        alert("You have just inserted a file which is not an image! please try again.");
+        return false;
+        }
