@@ -1,0 +1,31 @@
+message
+    textMessage : message
+    videoMessage : message
+    audioMessage : message
+    imageMessage : message
+
+chat 
+
+user
+
+
+
+
+class user:
+    list of chats
+    picture
+    name
+    displayName
+
+class chat:
+    name
+    list of messages
+    picture
+    last message
+
+class message:
+    *information (audio/video/text/etc)
+    timeSent
+    bool is sent or recieved
+    (reference to chat)
+

@@ -3,6 +3,7 @@ check.onclick = function() {
     var username = document.getElementById("Username").value;
     var password = document.getElementById("Password").value;
     var index = doesUserExist(username);
+    console.log(index);
     if(index == false) {
         alert("Username or Password is invalid!");
         return;

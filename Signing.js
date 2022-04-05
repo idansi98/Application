@@ -19,6 +19,8 @@ check.onclick = function() {
         users.push(user);
         alert("You have just been registered successfully!");
         window.location.assign("Login.html");
+        // weird voodoo magic concerning forms
+        return false;
     }
 }
 
